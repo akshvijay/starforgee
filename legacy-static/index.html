@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StarForge 2026 | 24-Hour Intercollege Hackathon @ BMSIT&M</title>
+<meta name="description" content="StarForge: a free 24-hour space-themed intercollege hackathon at BMSIT&M on 12th & 13th December. Hardware and software tracks.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="stars" aria-hidden="true"></canvas>
+
+<header class="nav">
+  <a href="#home" class="logo">STAR<span>FORGE</span></a>
+  <button class="burger" aria-label="Menu" aria-expanded="false">☰</button>
+  <nav>
+    <a href="#about">About</a>
+    <a href="#tracks">Tracks</a>
+    <a href="#problems">Problems</a>
+    <a href="#prizes">Prizes</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn-sm" data-register href="#" target="_blank" rel="noopener">Register</a>
+  </nav>
+</header>
+
+<main>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="planet" aria-hidden="true"></div>
+  <p class="eyebrow">BMSIT&amp;M presents · Intercollege Hackathon</p>
+  <h1>STAR<span>FORGE</span> <em>2026</em></h1>
+  <p class="tagline">24 hours. Two tracks. One mission: forge the future beyond Earth.</p>
+
+  <div class="chips">
+    <span class="chip">📅 12th &amp; 13th December</span>
+    <span class="chip">⏱ 24 Hours</span>
+    <span class="chip">📍 BMSIT&amp;M, Bengaluru</span>
+    <span class="chip free">🎟 Free Registration</span>
+  </div>
+
+  <div class="prize-banner">
+    <small>Total prize pool</small>
+    <strong data-prize-total>₹XX,XXX</strong>
+  </div>
+
+  <div class="countdown" id="countdown" aria-live="off">
+    <div><b id="cd-d">00</b><span>Days</span></div>
+    <div><b id="cd-h">00</b><span>Hours</span></div>
+    <div><b id="cd-m">00</b><span>Mins</span></div>
+    <div><b id="cd-s">00</b><span>Secs</span></div>
+  </div>
+
+  <div class="cta">
+    <a class="btn" data-register href="#" target="_blank" rel="noopener">🚀 Register on Unstop</a>
+    <a class="btn btn-ghost" data-brochure href="#" download>⬇ Download Brochure</a>
+  </div>
+  <a href="#about" class="scroll" aria-label="Scroll down">▼</a>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2><small>Mission Briefing</small>About the Event</h2>
+  <div class="grid two">
+    <p class="lead">StarForge is a 24-hour intercollege hackathon hosted at BMSIT&amp;M where student teams from across colleges build solutions inspired by space exploration, from satellites and rovers to mission-control software and life support. Come with an idea, leave with a prototype.</p>
+    <ul class="stats">
+      <li><b>24</b> hours of building</li>
+      <li><b>6</b> problem statements</li>
+      <li><b>2</b> tracks: Hardware &amp; Software</li>
+      <li><b>₹0</b> registration fee</li>
+    </ul>
+  </div>
+  <div class="note">🛰 <b>6 problem statements</b> will be released: 3 for the Hardware track and 3 for the Software track. Pick one and build.</div>
+</section>
+
+<!-- TRACKS -->
+<section id="tracks">
+  <h2><small>Choose your craft</small>Two Tracks</h2>
+  <div class="grid two">
+    <article class="card">
+      <div class="icon">🔧</div>
+      <h3>Hardware Track</h3>
+      <p>Sensors, microcontrollers, robotics, embedded systems and IoT. Build working physical prototypes that could survive a mission.</p>
+      <p class="muted">3 problem statements</p>
+    </article>
+    <article class="card">
+      <div class="icon">💻</div>
+      <h3>Software Track</h3>
+      <p>Web, mobile, AI/ML, data and simulation. Build the software that powers missions, analyses data and keeps crews safe.</p>
+      <p class="muted">3 problem statements</p>
+    </article>
+  </div>
+</section>
+
+<!-- ROUND 1 -->
+<section id="screening">
+  <h2><small>Round 1</small>Online Screening (PPT)</h2>
+  <div class="grid two">
+    <div>
+      <p class="lead">Teams first submit a short presentation online. Shortlisted teams get an invite to the 24-hour on-campus finale.</p>
+      <ol class="steps">
+        <li>Register your team on Unstop.</li>
+        <li>Pick a problem statement once released.</li>
+        <li>Download the PPT template and fill it in.</li>
+        <li>Submit it on Unstop before the deadline.</li>
+      </ol>
+    </div>
+    <div class="card center">
+      <div class="icon">📑</div>
+      <h3>PPT Template</h3>
+      <p>Use the official template for your submission.</p>
+      <a class="btn" data-ppt href="#" download>⬇ Download Template</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <h2><small>Choose your mission</small>Problem Statements</h2>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="hw" role="tab">Hardware</button>
+    <button class="tab" data-tab="sw" role="tab">Software</button>
+  </div>
+  <div class="grid three" id="problem-grid"></div>
+</section>
+
+<!-- GAME -->
+<section id="game">
+  <h2><small>Optional · Just for fun</small>Asteroid Dodger</h2>
+  <p class="lead center">Warm up for the hackathon. Steer the ship, dodge asteroids, grab stars. Use ← → / A D or drag/touch.</p>
+  <div class="game-wrap">
+    <canvas id="gameCanvas" width="480" height="560"></canvas>
+    <div class="game-hud"><span>Score: <b id="score">0</b></span><span>Best: <b id="best">0</b></span></div>
+    <button class="btn" id="startGame">Launch</button>
+  </div>
+</section>
+
+<!-- PRIZES -->
+<section id="prizes">
+  <h2><small>Glory awaits</small>Prize Pool</h2>
+  <p class="center big-prize">Total: <b data-prize-total>₹XX,XXX</b></p>
+  <div class="grid three podium" id="prize-grid"></div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <h2><small>Mission schedule</small>Timeline</h2>
+  <ol class="timeline" id="timeline-list"></ol>
+</section>
+
+<!-- ORGANISERS -->
+<section id="organisers">
+  <h2><small>Crew</small>Organised By</h2>
+  <div class="grid two">
+    <article class="card center"><h3>BMS Institute of Technology &amp; Management</h3><p>Yelahanka, Bengaluru</p></article>
+    <article class="card center"><h3>[Club / Department name]</h3><p>Student organising team</p></article>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <h2><small>Questions</small>FAQ</h2>
+  <div class="faq">
+    <details><summary>Who can participate?</summary><p>Any college student currently enrolled in a recognised institution. This is an intercollege event, so teams from any college are welcome.</p></details>
+    <details><summary>What is the team size?</summary><p>Teams of 2 to 4 members. [Confirm]</p></details>
+    <details><summary>Is there a registration fee?</summary><p>No. Registration is completely free, and you register through Unstop.</p></details>
+    <details><summary>Can teams include members from different colleges?</summary><p>Yes. [Confirm]</p></details>
+    <details><summary>Do we need a ready idea to register?</summary><p>No. Problem statements are released later; the screening round needs a PPT on your approach.</p></details>
+    <details><summary>What should we bring?</summary><p>Laptops, chargers, college ID, and hardware components for the hardware track. Basic infrastructure and refreshments are provided. [Confirm]</p></details>
+    <details><summary>Will food and accommodation be provided?</summary><p>Meals and snacks are provided during the 24 hours. [Confirm details]</p></details>
+    <details><summary>Will participants receive certificates?</summary><p>Yes, all participants receive participation certificates. [Confirm]</p></details>
+  </div>
+</section>
+</main>
+
+<footer id="contact">
+  <div class="grid three foot">
+    <div>
+      <h3>STAR<span>FORGE</span></h3>
+      <p class="muted">24-hour intercollege hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
+      <a class="btn btn-sm" data-instagram href="#" target="_blank" rel="noopener">📸 Follow on Instagram</a>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><b>[Contact 1 name]</b><br><a data-phone1 href="#">+91 XXXXX XXXXX</a></p>
+      <p><b>[Contact 2 name]</b><br><a data-phone2 href="#">+91 XXXXX XXXXX</a></p>
+    </div>
+    <div>
+      <h4>Location</h4>
+      <p>BMS Institute of Technology &amp; Management, Avalahalli, Doddaballapur Main Road, Yelahanka, Bengaluru 560064</p>
+    </div>
+  </div>
+  <iframe class="map" title="BMSIT&M location" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    src="https://www.google.com/maps?q=BMS+Institute+of+Technology+and+Management+Yelahanka+Bengaluru&output=embed"></iframe>
+  <p class="copy">© 2026 StarForge · BMSIT&amp;M</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
