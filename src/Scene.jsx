@@ -230,12 +230,13 @@ function Rig() {
 }
 
 function Sky() {
+  const small = useThree(s => s.size.width < 820)
   const g = useRef()
   const camera = useThree(s => s.camera)
   useFrame(() => { g.current.position.z = camera.position.z * 0.92 })
   return (
     <group ref={g}>
-      <Stars radius={110} depth={90} count={7000} factor={5} saturation={0.4} fade speed={0.6} />
+      <Stars radius={110} depth={90} count={small ? 3000 : 7000} factor={5} saturation={0.4} fade speed={0.6} />
     </group>
   )
 }
@@ -263,7 +264,7 @@ function World() {
       <directionalLight position={[8, 5, 6]} intensity={2.4} color="#fff2e0" />
       <Rig />
       <Sky />
-      <Sparkles count={600} scale={[46, 28, 170]} position={[0, 0, -70]} size={3.2} speed={0.35} color="#9fb4ff" opacity={0.8} />
+      <Sparkles count={mobile ? 250 : 600} scale={[46, 28, 170]} position={[0, 0, -70]} size={3.2} speed={0.35} color="#9fb4ff" opacity={0.8} />
       <Shooters />
 
       {/* Hero planet */}
@@ -272,7 +273,7 @@ function World() {
         <Moon orbit={mobile ? 4.6 : 5.6} />
       </Planet>
 
-      <Far z={-42} from={50} to={34}><Belt position={[0, 0, 0]} /></Far>
+      <Far z={-42} from={50} to={34}><Belt position={[0, 0, 0]} count={mobile ? 130 : 280} /></Far>
 
       {/* Ringed red giant */}
       <Far z={-78} from={72} to={50}><Planet position={[-8.5, 1.5, 0]} radius={4.2} colors={['#7a1f12', '#d4552a', '#f2b27a']} rim="#ff8a5c" atmo="#ff5a2a"
@@ -295,7 +296,7 @@ function World() {
 export default function Scene() {
   return (
     <div className="scene" aria-hidden="true">
-      <Canvas dpr={[1, 1.75]} camera={{ fov: 55, near: 0.1, far: 500, position: [0, 0, 12] }}
+      <Canvas dpr={[1, typeof innerWidth !== 'undefined' && innerWidth < 820 ? 1.5 : 1.75]} camera={{ fov: 55, near: 0.1, far: 500, position: [0, 0, 12] }}
         gl={{ antialias: false, powerPreference: 'high-performance' }}>
         <World />
       </Canvas>

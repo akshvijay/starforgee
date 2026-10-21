@@ -29,10 +29,11 @@ function Loader({ onDone }) {
 export default function App() {
   const [ready, setReady] = useState(() => location.search.includes('skip'))
   useEffect(bindInput, [])
+  useEffect(() => { if (ready && location.hash) setTimeout(() => document.querySelector(location.hash)?.scrollIntoView(), 100) }, [ready])
   useEffect(() => { document.body.style.overflow = ready ? '' : 'hidden' }, [ready])
   return (
     <>
-      <Suspense fallback={null}><Scene /></Suspense>
+      {!location.search.includes('nogl') && <Suspense fallback={null}><Scene /></Suspense>}
       <div className="scrim" />
       <AnimatePresence>{!ready && <Loader onDone={() => setReady(true)} />}</AnimatePresence>
       <Nav ready={ready} />

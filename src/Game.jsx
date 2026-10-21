@@ -60,7 +60,7 @@ export default function Game() {
   return (
     <div className="game-wrap">
       <div className="game-frame">
-        <canvas ref={canvas} width={480} height={560} />
+        <canvas ref={canvas} width={480} height={560} className={idle ? '' : 'playing'} />
         <div className="game-hud"><span>Score <b>{score}</b></span><span>Best <b>{best}</b></span></div>
         {idle && <button className="btn game-btn" onClick={() => api.current.start()}>{label}</button>}
       </div>
