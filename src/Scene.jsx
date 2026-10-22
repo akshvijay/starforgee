@@ -254,6 +254,19 @@ function Far({ z, from, to, children }) {
   return <group ref={g} position={[0, 0, z]}>{children}</group>
 }
 
+function BattleMoon({ position }) {
+  const g = useRef()
+  useFrame(({ clock }) => { g.current.position.y = position[1] + Math.sin(clock.elapsedTime * 0.4) * 0.3 })
+  return (
+    <group position={position} ref={g}>
+      <mesh><sphereGeometry args={[3.2, 48, 48]} /><meshStandardMaterial color="#8d93a3" roughness={0.9} metalness={0.2} /></mesh>
+      <mesh rotation={[Math.PI / 2, 0, 0]}><torusGeometry args={[3.21, 0.05, 8, 96]} /><meshBasicMaterial color="#1b1e29" /></mesh>
+      <mesh position={[1.4, 1.2, 2.5]}><sphereGeometry args={[0.85, 24, 24]} /><meshStandardMaterial color="#555a68" roughness={1} /></mesh>
+      <mesh position={[1.5, 1.3, 3.2]}><sphereGeometry args={[0.1, 8, 8]} /><meshBasicMaterial color={new THREE.Color(0.5, 4, 1.2)} toneMapped={false} /></mesh>
+    </group>
+  )
+}
+
 function World() {
   const mobile = useThree(s => s.size.width < 820)
   return (
@@ -266,10 +279,12 @@ function World() {
       <Sky />
       <Sparkles count={mobile ? 250 : 600} scale={[46, 28, 170]} position={[0, 0, -70]} size={3.2} speed={0.35} color="#9fb4ff" opacity={0.8} />
       <Shooters />
+      <mesh position={[-13, 7.5, -30]}><sphereGeometry args={[0.9, 24, 24]} /><meshBasicMaterial color={new THREE.Color(6, 4, 1.4)} toneMapped={false} /></mesh>
+      <mesh position={[-10.6, 6, -30]}><sphereGeometry args={[0.6, 24, 24]} /><meshBasicMaterial color={new THREE.Color(5, 2.4, 1)} toneMapped={false} /></mesh>
 
       {/* Hero planet */}
       <Planet position={mobile ? [0.6, 3.2, -6] : [0, -6.2, -4]} radius={mobile ? 2.4 : 4.2}
-        colors={['#0d3b8a', '#2a8f6a', '#c9a15a']} rim="#6fb4ff" atmo="#3f86ff" clouds={0.9} bands={0} spin={0.05}>
+        colors={['#9a5f28', '#e0a45a', '#f3d59b']} rim="#ffb36b" atmo="#ff9a4a" clouds={0.1} bands={0} spin={0.04}>
         <Moon orbit={mobile ? 4.6 : 5.6} />
       </Planet>
 
@@ -283,6 +298,7 @@ function World() {
       <Far z={-108} from={72} to={50}><Planet position={[7, -2, 0]} radius={2.8} colors={['#bfe4ff', '#6fa8e8', '#ffffff']} rim="#bfe9ff" atmo="#7ecbff" bands={9} clouds={0.6} spin={0.06} /></Far>
       <Far z={-118} from={62} to={44}><Station position={[-4.2, 1.6, 0]} /></Far>
 
+      <Far z={-140} from={70} to={48}><BattleMoon position={[9, 3, 0]} /></Far>
       <Far z={-185} from={110} to={75}><Sun position={[0, 3, 0]} /></Far>
 
       <EffectComposer multisampling={0}>

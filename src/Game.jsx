@@ -18,8 +18,11 @@ export default function Game() {
       g.fillStyle = '#8a8fb8'; rocks.forEach(o => { g.beginPath(); g.arc(o.x, o.y, o.r, 0, 6.28); g.fill() })
       g.shadowColor = '#ffc857'; g.shadowBlur = 14; g.fillStyle = '#ffc857'
       coins.forEach(o => { g.beginPath(); g.arc(o.x, o.y, o.r, 0, 6.28); g.fill() })
-      g.shadowColor = '#00d4ff'; g.fillStyle = '#00d4ff'; g.beginPath()
-      g.moveTo(ship.x, ship.y - ship.r - 6); g.lineTo(ship.x + ship.r, ship.y + ship.r); g.lineTo(ship.x - ship.r, ship.y + ship.r); g.fill()
+      g.shadowColor = '#4bd5ff'; g.fillStyle = '#dfe6f5'; g.beginPath()
+      const { x, y, r } = ship
+      g.moveTo(x, y - r - 8); g.lineTo(x + 6, y - 2); g.lineTo(x + r + 8, y + r); g.lineTo(x + 5, y + r - 5); g.lineTo(x, y + r + 3)
+      g.lineTo(x - 5, y + r - 5); g.lineTo(x - r - 8, y + r); g.lineTo(x - 6, y - 2); g.closePath(); g.fill()
+      g.fillStyle = '#4bd5ff'; g.fillRect(x - 2, y - 8, 4, 10)
       g.shadowBlur = 0
     }
     const end = () => {
