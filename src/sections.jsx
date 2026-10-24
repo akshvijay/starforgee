@@ -71,8 +71,8 @@ export function Hero({ ready }) {
           <motion.p className="tagline" {...fade(d + 1.2)}>24 hours. Two sides. One mission: forge the future across the galaxy.</motion.p>
           <motion.ul className="facts" {...fade(d + 1.35)}>
             <li>12 &amp; 13 December</li>
-            <li>24 hours</li>
             <li>BMSIT&amp;M, Bengaluru</li>
+            <li>Teams of 3&ndash;4, at least 1 girl</li>
             <li className="free">Free registration</li>
           </motion.ul>
           <motion.div className="statrow" {...fade(d + 1.5)}>
@@ -86,6 +86,7 @@ export function Hero({ ready }) {
             <Magnetic><a className="btn" href={CONFIG.registerUrl} target="_blank" rel="noopener">Register on Unstop →</a></Magnetic>
             <Magnetic><a className="btn btn-ghost" href={CONFIG.brochureUrl} download>Download brochure</a></Magnetic>
           </motion.div>
+          <motion.p className="deadline" {...fade(d + 1.9)}>Registrations close 20 Nov, 11:59 PM IST &middot; Every team must include at least one girl</motion.p>
           <div className="walkers">
             <motion.div {...fade(d + 2.2)}>
               <Walker size={112} duration={26}><Sage size={112} className="walking" /></Walker>
@@ -126,8 +127,8 @@ export function Crawl() {
             <p className="ep">Episode 2026</p>
             <h2>The Forge Begins</h2>
             <p>It is a period of intense innovation. Student teams from colleges across the galaxy are gathering at BMSIT&amp;M for a 24-hour intercollege hackathon on the 12th and 13th of December.</p>
-            <p>Two sides stand before them: HARDWARE, where circuits and machines spring to life, and SOFTWARE, where code bends the galaxy to its will. Six problem statements, three for each side, will be revealed.</p>
-            <p>Entry is free, and a great bounty awaits those who build the boldest solution. Gather your squad, choose your side, and register on Unstop&hellip;</p>
+            <p>Two sides stand before them: HARDWARE, where circuits and machines spring to life, and SOFTWARE, where code bends the galaxy to its will. Each side offers five problem statements and one open challenge of its own.</p>
+            <p>Entry is free, and a bounty of ₹65,000 awaits those who build the boldest solution. Gather a squad of three or four, with at least one girl on the team, choose your side, and register on Unstop&hellip;</p>
           </motion.div>
         </div>
         <div className="crawl-fade" />
@@ -140,13 +141,14 @@ export function Facts() {
   return (
     <Section id="facts" eyebrow="01 · Mission data" title="By the Numbers">
       <div className="stats four">
-        {[[24, 'hours of building'], [6, 'problem statements'], [2, 'sides to choose'], [0, 'registration fee', '₹']].map(([n, l, p], i) => (
+        {[[24, 'hours of building'], [12, 'problem statements'], [65000, 'prize pool', '₹'], [0, 'registration fee', '₹']].map(([n, l, p], i) => (
           <Reveal key={l} delay={i * 0.1}>
             <Tilt className="glass stat"><b><Counter to={n} prefix={p || ''} /></b><span>{l}</span></Tilt>
           </Reveal>
         ))}
       </div>
-      <Reveal><div className="note"><b>6 problem statements</b> will be released: 3 for the Hardware track and 3 for the Software track. Pick one and build it.</div></Reveal>
+      <Reveal><div className="note"><b>12 problem statements:</b> 5 + 1 open innovation for the Hardware track, and 5 + 1 open innovation for the Software track. Pick one and build it.</div></Reveal>
+      <Reveal delay={0.1}><div className="note"><b>Team rule (mandatory):</b> 3&ndash;4 members per team, and every team must include at least one girl to be eligible.</div></Reveal>
     </Section>
   )
 }
@@ -162,9 +164,9 @@ export function Tracks() {
       <div className="grid two chibi-grid">
         {tracks.map(([i, t, d], k) => (
           <Reveal key={t} delay={k * 0.15}>
-            <Tilt className="glass card">
+            <Tilt className="glass card track" whileHover={{ scale: 1.04 }}>
               <span className="card-chibi">{i}</span>
-              <span className={'side ' + (k ? 'dark' : 'light')}>{k ? 'Dark side' : 'Light side'}</span><h3>{t}</h3><p>{d}</p><p className="muted">3 problem statements</p>
+              <span className={'side ' + (k ? 'dark' : 'light')}>{k ? 'Dark side' : 'Light side'}</span><h3>{t}</h3><p>{d}</p><p className="muted">5 problem statements + 1 open innovation</p>
               
             </Tilt>
           </Reveal>
@@ -180,18 +182,19 @@ export function Screening() {
     <Section id="screening" eyebrow="03 · Round 1 · Holotransmission" title="Online Screening (PPT)">
       <div className="grid two">
         <Reveal>
-          <p className="lead">Teams first submit a short presentation online. Shortlisted teams get an invite to the 24-hour on-campus finale.</p>
+          <p className="lead">Round 1 is online. Submit your abstract and pitch deck by 20 Nov, 11:59 PM IST. The technical committee screens every entry on innovation, technical feasibility and architecture, and the top teams advance to the 24-hour offline hackathon at BMSIT&amp;M.</p>
           <ol className="steps">
-            {['Register your team on Unstop.', 'Pick a problem statement once released.', 'Download the PPT template and fill it in.', 'Submit it on Unstop before the deadline.'].map((s, i) => (
-              <motion.li key={s} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.6 }}>
-                <b>{i + 1}</b>{s}
+            {['Form a team of 3 or 4 with at least one girl (mandatory), and register on Unstop (free).', 'Pick a problem statement, or the open innovation challenge, in the Software or Hardware track.', 'Download the official PPT template and fill it in. Say clearly which track you are entering.', 'Upload it as a PPT, PPTX or PDF on Unstop before the deadline.'].map((t, i) => (
+              <motion.li key={t} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.6 }}>
+                <b>{i + 1}</b>{t}
               </motion.li>
             ))}
           </ol>
+          <div className="note">Late or emailed entries are not accepted. Make sure your file is fully uploaded before the round closes.</div>
         </Reveal>
         <Reveal delay={0.2}>
           <Tilt className="glass card center">
-            <span className="icon">PPT</span><h3>PPT Template</h3><p>Use the official template for your submission.</p>
+            <span className="icon">PPT</span><h3>Official Deck Template</h3><p>Stick to the template layout. Decks that ignore it may be rejected.</p>
             <Magnetic><a className="btn" href={CONFIG.pptTemplateUrl} download>Download template</a></Magnetic>
           </Tilt>
         </Reveal>
@@ -201,8 +204,36 @@ export function Screening() {
 }
 
 /* ---------- PROBLEMS ---------- */
+function ProblemModal({ p, side, onClose }) {
+  useEffect(() => {
+    const k = e => e.key === 'Escape' && onClose()
+    addEventListener('keydown', k)
+    document.body.style.overflow = 'hidden'
+    return () => { removeEventListener('keydown', k); document.body.style.overflow = '' }
+  }, [])
+  return (
+    <motion.div className="modal-back" onClick={onClose} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+      <motion.div className="modal glass" data-t={side} role="dialog" aria-modal="true" aria-label={p.title} onClick={e => e.stopPropagation()}
+        initial={{ y: 40, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 30, opacity: 0 }} transition={{ duration: 0.3 }}>
+        <button className="modal-x" onClick={onClose} aria-label="Close">&times;</button>
+        <div className="num">{p.id}</div>
+        <h3>{p.title}</h3>
+        <p>{p.context}</p>
+        {p.challenge && <><h4>Your challenge</h4><p>{p.challenge}</p></>}
+        <h4>Expected outcomes</h4>
+        <ul>{p.outcomes.map(o => <li key={o}>{o}</li>)}</ul>
+        <div className="modal-cta">
+          <a className="btn" href={CONFIG.registerUrl} target="_blank" rel="noopener">Register on Unstop</a>
+          <a className="btn btn-ghost" href={CONFIG.psUrl} download>All problem statements (PDF)</a>
+        </div>
+      </motion.div>
+    </motion.div>
+  )
+}
+
 export function Problems() {
   const [tab, setTab] = useState('hw')
+  const [open, setOpen] = useState(null)
   return (
     <Section id="problems" eyebrow="04 · Choose your mission" title="Problem Statements" color="var(--red)">
       <div className="tabs" role="tablist">
@@ -213,20 +244,24 @@ export function Problems() {
           </button>
         ))}
       </div>
+      <p className="ps-note">5 problem statements + 1 open innovation. Tap a card for the full brief.</p>
       <AnimatePresence mode="wait">
-        <motion.div key={tab} className="grid three" initial="h" animate="s" exit="x" variants={{ s: { transition: { staggerChildren: 0.12 } }, x: { transition: { staggerChildren: 0.05 } } }}>
-          {CONFIG.problems[tab].map((p, i) => (
-            <motion.div key={p.title} variants={{ h: { opacity: 0, y: 40, rotateX: -20 }, s: { opacity: 1, y: 0, rotateX: 0 }, x: { opacity: 0, y: -20 } }}>
-              <Tilt className="glass card ps" data-t={tab}>
-                <div className="num">{tab === 'hw' ? 'HW' : 'SW'}-0{i + 1}</div>
-                <h3>{p.title}</h3><p>{p.desc}</p>
-                <span className="tag">{tab === 'hw' ? 'Hardware' : 'Software'}</span>
-                
+        <motion.div key={tab} className="grid three ps-grid" initial="h" animate="s" exit="x" variants={{ s: { transition: { staggerChildren: 0.08 } }, x: { transition: { staggerChildren: 0.03 } } }}>
+          {CONFIG.problems[tab].map(p => (
+            <motion.div key={p.id} variants={{ h: { opacity: 0, y: 40 }, s: { opacity: 1, y: 0 }, x: { opacity: 0, y: -20 } }}>
+              <Tilt className="glass card ps" data-t={tab} role="button" tabIndex={0} aria-label={'Open ' + p.title}
+                onClick={() => setOpen(p)} onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && (e.preventDefault(), setOpen(p))}>
+                <div className="num">{p.id}</div>
+                <h3>{p.title}</h3>
+                <p className="clamp">{p.context}</p>
+                <span className="more">{p.open ? 'Open innovation' : 'View details'} &rarr;</span>
               </Tilt>
             </motion.div>
           ))}
         </motion.div>
       </AnimatePresence>
+      <Reveal><p className="center ps-dl"><a className="btn btn-ghost" href={CONFIG.psUrl} download>Download all problem statements (PDF)</a></p></Reveal>
+      <AnimatePresence>{open && <ProblemModal p={open} side={tab} onClose={() => setOpen(null)} />}</AnimatePresence>
     </Section>
   )
 }
@@ -243,21 +278,22 @@ export function GameSection() {
 
 /* ---------- PRIZES ---------- */
 export function Prizes() {
+  const cast = [<Elder size={92} className="d1" />, <Droid size={84} className="d2" />, <DarkLord size={92} />, <Sage size={92} className="d1" />]
   return (
     <Section id="prizes" eyebrow="05 · The bounty" title="Prize Pool" color="var(--accent)">
       <Reveal><p className="center big-prize">Total prize pool<b>{CONFIG.prizeTotal}</b></p></Reveal>
-      <div className="grid three podium chibi-grid">
+      <div className="grid four podium chibi-grid">
         {CONFIG.prizes.map((p, i) => (
-          <Reveal key={p.place} delay={i * 0.15}>
-            <Tilt className={'glass card ' + (p.first ? 'first' : '')}>
-              <span className="card-chibi top">{[<Elder size={96} className="d1" />, <Droid size={88} className="d2" />, <Trooper size={88} />][i]}</span>
-              <span className="medal">{i + 1}</span>
-              <h3>{p.place} place</h3><div className="amt">{p.amount}</div>
-              
+          <Reveal key={p.place} delay={i * 0.12}>
+            <Tilt className={'glass card ' + (p.first ? 'first' : '')} whileHover={{ scale: 1.04 }}>
+              <span className="card-chibi top">{cast[i]}</span>
+              <div className="amt">{p.amount}</div>
+              <h3>{p.place}</h3>
             </Tilt>
           </Reveal>
         ))}
       </div>
+      <Reveal><p className="center perks">{CONFIG.perks}</p></Reveal>
     </Section>
   )
 }
@@ -284,13 +320,26 @@ export function Timeline() {
 }
 
 /* ---------- ORGANISERS ---------- */
+const LOGOS = [
+  ['bmsit', 'BMS Institute of Technology & Management'],
+  ['ieee-sb', 'IEEE Student Branch, BMSIT&M'],
+  ['aess', 'IEEE Aerospace and Electronic Systems Society'],
+  ['grss', 'IEEE Geoscience and Remote Sensing Society'],
+  ['wie', 'IEEE Women in Engineering'],
+  ['iic', "Institution's Innovation Council (Ministry of Education initiative)"]
+]
+
 export function Organisers() {
   return (
     <Section id="organisers" eyebrow="07 · The council" title="Organised By" color="var(--red)">
-      <div className="grid two">
-        <Reveal><Tilt className="glass card center"><h3>BMS Institute of Technology &amp; Management</h3><p>Yelahanka, Bengaluru</p></Tilt></Reveal>
-        <Reveal delay={0.15}><Tilt className="glass card center"><h3>{CONFIG.organiserClub}</h3><p>Student organising team</p></Tilt></Reveal>
+      <div className="logos">
+        {LOGOS.map(([f, name], i) => (
+          <Reveal key={f} delay={i * 0.08} y={24}>
+            <div className="logo-tile" title={name}><img src={'/logos/' + f + '.png'} alt={name} loading="lazy" /></div>
+          </Reveal>
+        ))}
       </div>
+      <Reveal delay={0.1}><p className="center muted org-line">BMS Institute of Technology &amp; Management, Yelahanka, Bengaluru &middot; {CONFIG.organiserClub}</p></Reveal>
     </Section>
   )
 }
@@ -337,7 +386,7 @@ export function Footer() {
         </Reveal>
         <Reveal delay={0.1}>
           <h4>Contact</h4>
-          {CONFIG.contacts.map(c => <p key={c.name}><b>{c.name}</b><br /><a href={'tel:' + c.phone}>{c.phone}</a></p>)}
+          {CONFIG.contacts.map(c => <p key={c.name}><b>{c.name}</b><br /><a href={'tel:' + c.phone}>{c.label || c.phone}</a></p>)}
         </Reveal>
         <Reveal delay={0.2}>
           <h4>Location</h4>

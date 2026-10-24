@@ -91,7 +91,7 @@ export function Counter({ to, prefix = '', suffix = '' }) {
   const inView = useInView(ref, { once: true })
   useEffect(() => {
     if (!inView) return
-    const c = animate(0, to, { duration: 1.8, ease: 'easeOut', onUpdate: v => { ref.current.textContent = prefix + Math.round(v) + suffix } })
+    const c = animate(0, to, { duration: 1.8, ease: 'easeOut', onUpdate: v => { ref.current.textContent = prefix + Math.round(v).toLocaleString('en-IN') + suffix } })
     return () => c.stop()
   }, [inView])
   return <span ref={ref}>{prefix}0{suffix}</span>
