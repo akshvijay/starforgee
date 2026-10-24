@@ -1,7 +1,7 @@
 // ===== EDIT ME: all event details live here =====
 export const CONFIG = {
   eventStart: "2026-12-12T08:00:00+05:30", // Day 1 - build begins, 08:00 AM IST
-  registerUrl: "#",                         // TODO: paste the Unstop registration link
+  registerUrl: "https://unstop.com/o/qhl7WSP?lb=uses5hnA&utm_medium=Share&utm_source=aerosele58679&utm_campaign=Online_coding_challenge",
   brochureUrl: "#",                         // TODO: e.g. "/brochure.pdf" (put the file in /public)
   pptTemplateUrl: "/STARFORGE_TEMPLATE.pptx",
   psUrl: "/STARFORGE_PS.pdf",
