@@ -513,3 +513,31 @@ footer h4{color:var(--blue);font-weight:700;font-size:1.1rem;letter-spacing:.14e
 .chibi-grid>div>.tilt{flex:1}
 .track{display:flex;flex-direction:column}
 .track .muted{margin-top:auto;padding-top:10px}
+
+/* ===== real StarForge logo ===== */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo img{display:block;height:30px;width:auto}
+.hero h1.logo-hero{font-size:0;line-height:0;text-shadow:none;letter-spacing:0;white-space:normal}
+.logo-hero img{display:block;margin:0 auto;max-height:clamp(150px,31vh,310px);width:auto;max-width:92vw;filter:drop-shadow(0 0 34px rgba(46,120,255,.28))}
+.intro-logo{width:min(560px,86vw);height:auto;filter:drop-shadow(0 0 40px rgba(46,120,255,.35))}
+.foot-logo-img{display:block;width:min(240px,70%);height:auto;margin-bottom:14px}
+@media(max-width:820px){.logo img{height:26px}.logo-hero img{max-height:clamp(130px,24vh,230px)}}
+.logo-hero img{max-height:clamp(140px,27vh,280px)}
+.walkers{height:104px;bottom:0}
+.deadline{margin-top:-2px}
+@media(max-width:820px){.logo-hero img{max-height:clamp(120px,22vh,210px)}.walkers{height:96px}}
+
+/* ===== logo shown as supplied ===== */
+.logo-crop{--S:min(46vh,88vw,440px);display:block;width:var(--S);height:calc(var(--S)*.66);overflow:hidden;margin-inline:auto;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);
+  -webkit-mask-composite:source-in;mask-image:linear-gradient(to right,transparent,#000 3%,#000 97%,transparent),linear-gradient(to bottom,transparent,#000 4%,#000 96%,transparent);mask-composite:intersect}
+.logo-crop img{display:block;width:var(--S);height:auto;max-width:none;margin-top:calc(var(--S)*-.125)}
+.logo .logo-crop{margin:0}
+.logo-hero-wrap{display:block}
+.foot-logo-crop{margin:0 0 14px!important}
+.hero h1.logo-hero img{max-height:none}
+.logo{line-height:0}
+.nav{padding-block:6px}
+@media(max-width:820px){.logo-crop{--S:min(38vh,86vw,380px)}.logo .logo-crop{--S:78px!important}}
+.logo-crop{--S:min(40vh,84vw,400px)}
+@media(max-width:820px){.logo-crop{--S:min(33vh,80vw,330px)}.logo .logo-crop{--S:78px!important}}

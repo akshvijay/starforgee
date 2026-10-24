@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence, useScroll, useTransform, useMotionValueEvent } from 'framer-motion'
 import { CONFIG } from './config'
-import { Reveal, SplitText, Magnetic, Tilt, Counter } from './ui'
+import { Reveal, SplitText, Magnetic, Tilt, Counter, Logo } from './ui'
 import Game from './Game'
 import { Trooper, Sage, Droid, DarkLord, Elder, Walker } from './Chibi'
 
@@ -63,10 +63,9 @@ export function Hero({ ready }) {
       {ready && (
         <>
           <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · Intercollege hackathon</motion.p>
-          <h1>
-            <span className="l1"><SplitText text="STAR" immediate delay={d + 0.2} stagger={0.07} /></span>
-            <span className="l2"><SplitText text="FORGE" immediate delay={d + 0.5} stagger={0.07} /></span>
-            <motion.em {...fade(d + 1.1)}>Hackathon 2026</motion.em>
+          <h1 className="logo-hero">
+            <span className="sr-only">StarForge Hackathon 2026</span>
+            <motion.span className="logo-hero-wrap" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: d + 0.2, ease: [0.2, 0.7, 0.2, 1] }}><Logo /></motion.span>
           </h1>
           <motion.p className="tagline" {...fade(d + 1.2)}>24 hours. Two sides. One mission: forge the future across the galaxy.</motion.p>
           <motion.ul className="facts" {...fade(d + 1.35)}>
@@ -89,8 +88,8 @@ export function Hero({ ready }) {
           <motion.p className="deadline" {...fade(d + 1.9)}>Registrations close 20 Nov, 11:59 PM IST &middot; Every team must include at least one girl</motion.p>
           <div className="walkers">
             <motion.div {...fade(d + 2.2)}>
-              <Walker size={112} duration={26}><Sage size={112} className="walking" /></Walker>
-              <Walker size={112} duration={26} delay={-13}><DarkLord size={112} className="walking" /></Walker>
+              <Walker size={96} duration={26}><Sage size={96} className="walking" /></Walker>
+              <Walker size={96} duration={26} delay={-13}><DarkLord size={96} className="walking" /></Walker>
             </motion.div>
           </div>
           <motion.div className="mouse" {...fade(d + 2.2)}><i /></motion.div>
@@ -380,7 +379,7 @@ export function Footer() {
       <div className="foot-crew"><Droid size={80} className="d1" /><Elder size={96} /><Trooper size={88} className="d2" /><p>May the Forge be with you.</p></div>
       <div className="grid three foot">
         <Reveal>
-          <h3 className="foot-logo">STAR<span>FORGE</span></h3>
+          <Logo className="foot-logo-crop" style={{ '--S': '250px' }} />
           <p className="muted">24-hour intercollege hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
           <Magnetic><a className="btn btn-sm" href={CONFIG.instagramUrl} target="_blank" rel="noopener">Follow on Instagram</a></Magnetic>
         </Reveal>
@@ -390,7 +389,7 @@ export function Footer() {
         </Reveal>
         <Reveal delay={0.2}>
           <h4>Location</h4>
-          <p>BMS Institute of Technology &amp; Management, Avalahalli, Doddaballapur Main Road, Yelahanka, Bengaluru 560064</p>
+          <p>BMS Institute of Technology &amp; Management, Avalahalli, Doddaballapur Main Road, Yelahanka, Bengaluru 560119</p>
         </Reveal>
       </div>
       <Reveal>
@@ -413,7 +412,7 @@ export function Nav({ ready }) {
     <>
       <motion.div className="progress" style={{ scaleX: scrollYProgress }} />
       <motion.header className="nav" initial={{ y: -80 }} animate={{ y: ready && !hidden ? 0 : -90 }} transition={{ duration: 0.4 }}>
-        <a href="#home" className="logo">STAR<span>FORGE</span></a>
+        <a href="#home" className="logo" aria-label="StarForge home"><Logo style={{ '--S': '92px' }} /></a>
         <button className="burger" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
         <nav className={open ? 'open' : ''} onClick={() => setOpen(false)}>
           {links.map(l => <a key={l} href={'#' + l}>{l}</a>)}

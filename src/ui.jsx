@@ -113,3 +113,12 @@ export function Cursor() {
     </>
   )
 }
+
+/* The supplied StarForge artwork, shown as-is. The wrapper only trims the empty black margins above and below it. */
+export function Logo({ className = '', style }) {
+  return (
+    <span className={'logo-crop ' + className} style={style}>
+      <img src="/logo.jpg" alt="StarForge: 24 hour space hackathon" />
+    </span>
+  )
+}

@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { bindInput } from './scroll'
 import { Flybys } from './Chibi'
+import { Logo } from './ui'
 import { Nav, Hud, Hero, Marquee, Crawl, Facts, Tracks, Screening, Problems, GameSection, Prizes, Timeline, Organisers, FAQ, Footer } from './sections'
 
 const Scene = lazy(() => import('./Scene'))
@@ -44,7 +45,7 @@ function Loader({ onDone }) {
       {stage === 2 && <Warp />}
       <AnimatePresence mode="wait">
         {stage === 0 && <motion.p key="a" className="intro-blue" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>A long time ago, in a college not so far away&hellip;</motion.p>}
-        {stage === 1 && <motion.div key="b" className="intro-title" initial={{ scale: 2.4, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.2, opacity: 0 }} transition={{ duration: 2, ease: [0.2, 0.7, 0.2, 1] }}>STAR<br />FORGE</motion.div>}
+        {stage === 1 && <motion.div key="b" initial={{ scale: 1.7, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.2, opacity: 0 }} transition={{ duration: 2, ease: [0.2, 0.7, 0.2, 1] }}><Logo style={{ '--S': 'min(600px, 90vw)' }} /></motion.div>}
       </AnimatePresence>
       <button className="skip" onClick={onDone}>Skip intro</button>
     </motion.div>
