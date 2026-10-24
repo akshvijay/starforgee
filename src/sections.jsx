@@ -63,9 +63,10 @@ export function Hero({ ready }) {
       {ready && (
         <>
           <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · Intercollege hackathon</motion.p>
-          <h1 className="logo-hero">
-            <span className="sr-only">StarForge Hackathon 2026</span>
-            <motion.span className="logo-hero-wrap" initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, delay: d + 0.2, ease: [0.2, 0.7, 0.2, 1] }}><Logo /></motion.span>
+          <h1>
+            <span className="l1"><SplitText text="STAR" immediate delay={d + 0.2} stagger={0.07} /></span>
+            <span className="l2"><SplitText text="FORGE" immediate delay={d + 0.5} stagger={0.07} /></span>
+            <motion.em {...fade(d + 1.1)}>Hackathon 2026</motion.em>
           </h1>
           <motion.p className="tagline" {...fade(d + 1.2)}>24 hours. Two sides. One mission: forge the future across the galaxy.</motion.p>
           <motion.ul className="facts" {...fade(d + 1.35)}>
