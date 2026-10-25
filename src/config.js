@@ -5,7 +5,7 @@ export const CONFIG = {
   brochureUrl: "#",                         // TODO: e.g. "/brochure.pdf" (put the file in /public)
   pptTemplateUrl: "/STARFORGE_TEMPLATE.pptx",
   psUrl: "/STARFORGE_PS.pdf",
-  instagramUrl: "#",                        // TODO: paste the Instagram page link
+  instagramUrl: "https://www.instagram.com/aess.bmsit?mdxt=MWM5dmQxaDdkM3pzOQ==",
   contacts: [
     { name: "Kishan", phone: "+919483113397", label: "+91 94831 13397" },
     { name: "Saksham", phone: "+917974347734", label: "+91 79743 47734" }
