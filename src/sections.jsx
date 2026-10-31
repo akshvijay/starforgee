@@ -62,13 +62,13 @@ export function Hero({ ready }) {
     <section id="home" className="hero">
       {ready && (
         <>
-          <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · Intercollege hackathon</motion.p>
+          <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · National hackathon</motion.p>
           <h1>
             <span className="l1"><SplitText text="STAR" immediate delay={d + 0.2} stagger={0.07} /></span>
             <span className="l2"><SplitText text="FORGE" immediate delay={d + 0.5} stagger={0.07} /></span>
             <motion.em {...fade(d + 1.1)}>Hackathon 2026</motion.em>
           </h1>
-          <motion.p className="tagline" {...fade(d + 1.2)}>24 hours. Two sides. One mission: forge the future across the galaxy.</motion.p>
+          <motion.p className="tagline" {...fade(d + 1.2)}>24 hours. Two tracks. One mission: forge the future across the galaxy.</motion.p>
           <motion.ul className="facts" {...fade(d + 1.35)}>
             <li>12 &amp; 13 December</li>
             <li>BMSIT&amp;M, Bengaluru</li>
@@ -101,7 +101,7 @@ export function Hero({ ready }) {
 }
 
 export function Marquee() {
-  const items = ['MAY THE FORGE BE WITH YOU', 'FREE REGISTRATION', '24 HOURS', 'LIGHT SIDE: HARDWARE', 'DARK SIDE: SOFTWARE', '12–13 DECEMBER', 'BMSIT&M', 'THE BOUNTY AWAITS']
+  const items = ['MAY THE FORGE BE WITH YOU', 'FREE REGISTRATION', '24 HOURS', 'HARDWARE TRACK', 'SOFTWARE TRACK', '12–13 DECEMBER', 'BMSIT&M', 'THE BOUNTY AWAITS']
   const row = [...items, ...items]
   return (
     <div className="marquee" aria-hidden="true">
@@ -126,9 +126,9 @@ export function Crawl() {
           <motion.div className="crawl" ref={txt} style={{ y }}>
             <p className="ep">Episode 2026</p>
             <h2>The Forge Begins</h2>
-            <p>It is a period of intense innovation. Student teams from colleges across the galaxy are gathering at BMSIT&amp;M for a 24-hour intercollege hackathon on the 12th and 13th of December.</p>
-            <p>Two sides stand before them: HARDWARE, where circuits and machines spring to life, and SOFTWARE, where code bends the galaxy to its will. Each side offers five problem statements and one open challenge of its own.</p>
-            <p>Entry is free, and a bounty of ₹65,000 awaits those who build the boldest solution. Gather a squad of three or four, with at least one girl on the team, choose your side, and register on Unstop&hellip;</p>
+            <p>It is a period of intense innovation. Student teams from across the country are gathering at BMSIT&amp;M for a 24-hour national hackathon on the 12th and 13th of December.</p>
+            <p>Two tracks stand before them: HARDWARE, where circuits and machines spring to life, and SOFTWARE, where code bends the galaxy to its will. Each track offers five problem statements and one open challenge of its own.</p>
+            <p>Entry is free, and a bounty of ₹65,000 awaits those who build the boldest solution. Gather a squad of three or four, with at least one girl on the team, choose a track, and register on Unstop&hellip;</p>
           </motion.div>
         </div>
         <div className="crawl-fade" />
@@ -156,17 +156,17 @@ export function Facts() {
 /* ---------- TRACKS ---------- */
 export function Tracks() {
   const tracks = [
-    [<Droid size={104} className="d1" />, 'Hardware Track', 'Sensors, microcontrollers, robotics, embedded systems and IoT. Build working physical prototypes that could survive a mission.'],
-    [<DarkLord size={108} className="d2" />, 'Software Track', 'Web, mobile, AI/ML, data and simulation. Build the software that powers missions, analyses data and keeps crews safe.']
+    ['hw', <DarkLord size={104} className="d1" />, 'Hardware Track', 'Sensors, microcontrollers, robotics, embedded systems and IoT. Build working physical prototypes that could survive a mission.'],
+    ['sw', <Sage size={108} className="d2" />, 'Software Track', 'Web, mobile, AI/ML, data and simulation. Build the software that powers missions, analyses data and keeps crews safe.']
   ]
   return (
-    <Section id="tracks" eyebrow="02 · Choose your side" title="Two Tracks" color="var(--accent)">
+    <Section id="tracks" eyebrow="02 · Choose a track" title="Two Tracks" color="var(--accent)">
       <div className="grid two chibi-grid">
-        {tracks.map(([i, t, d], k) => (
+        {tracks.map(([key, i, t, d], k) => (
           <Reveal key={t} delay={k * 0.15}>
-            <Tilt className="glass card track" whileHover={{ scale: 1.04 }}>
+            <Tilt className="glass card track" data-t={key} whileHover={{ scale: 1.04 }}>
               <span className="card-chibi">{i}</span>
-              <span className={'side ' + (k ? 'dark' : 'light')}>{k ? 'Dark side' : 'Light side'}</span><h3>{t}</h3><p>{d}</p><p className="muted">5 problem statements + 1 open innovation</p>
+              <span className="side" data-t={key}>{key === 'hw' ? 'Hardware' : 'Software'}</span><h3>{t}</h3><p>{d}</p><p className="muted">5 problem statements + 1 open innovation</p>
               
             </Tilt>
           </Reveal>
@@ -237,7 +237,7 @@ export function Problems() {
   return (
     <Section id="problems" eyebrow="04 · Choose your mission" title="Problem Statements" color="var(--red)">
       <div className="tabs" role="tablist">
-        {[['hw', 'Light side · Hardware'], ['sw', 'Dark side · Software']].map(([k, l]) => (
+        {[['hw', 'Hardware'], ['sw', 'Software']].map(([k, l]) => (
           <button key={k} role="tab" aria-selected={tab === k} data-t={k} className={'tab' + (tab === k ? ' active' : '')} onClick={() => setTab(k)}>
             {tab === k && <motion.span layoutId="pill" className="pill" data-t={k} transition={{ type: 'spring', stiffness: 400, damping: 32 }} />}
             <span>{l}</span>
@@ -285,7 +285,7 @@ export function Prizes() {
       <div className="grid four podium chibi-grid">
         {CONFIG.prizes.map((p, i) => (
           <Reveal key={p.place} delay={i * 0.12}>
-            <Tilt className={'glass card ' + (p.first ? 'first' : '')} whileHover={{ scale: 1.04 }}>
+            <Tilt className={'glass card ' + (p.first ? 'first' : '')} data-t={p.track} whileHover={{ scale: 1.04 }}>
               <span className="card-chibi top">{cast[i]}</span>
               <div className="amt">{p.amount}</div>
               <h3>{p.place}</h3>
@@ -381,12 +381,13 @@ export function Footer() {
       <div className="grid three foot">
         <Reveal>
           <Logo className="foot-logo-crop" style={{ '--S': '250px' }} />
-          <p className="muted">24-hour intercollege hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
+          <p className="muted">24-hour national hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
           <Magnetic><a className="btn btn-sm" href={CONFIG.instagramUrl} target="_blank" rel="noopener">Follow on Instagram</a></Magnetic>
         </Reveal>
         <Reveal delay={0.1}>
           <h4>Contact</h4>
           {CONFIG.contacts.map(c => <p key={c.name}><b>{c.name}</b><br /><a href={'tel:' + c.phone}>{c.label || c.phone}</a></p>)}
+          <p><b>Email</b><br /><a href={'mailto:' + CONFIG.contactEmail}>{CONFIG.contactEmail}</a></p>
         </Reveal>
         <Reveal delay={0.2}>
           <h4>Location</h4>

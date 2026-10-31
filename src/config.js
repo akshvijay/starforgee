@@ -6,6 +6,7 @@ export const CONFIG = {
   pptTemplateUrl: "/STARFORGE_TEMPLATE.pptx",
   psUrl: "/STARFORGE_PS.pdf",
   instagramUrl: "https://www.instagram.com/aess.bmsit?mdxt=MWM5dmQxaDdkM3pzOQ==",
+  contactEmail: "starforgebmsit2026@gmail.com",
   contacts: [
     { name: "Kishan", phone: "+919483113397", label: "+91 94831 13397" },
     { name: "Saksham", phone: "+917974347734", label: "+91 79743 47734" }
@@ -13,8 +14,8 @@ export const CONFIG = {
   prizeTotal: "₹65,000",
   prizes: [
     { place: "Overall Winner", amount: "₹25,000", first: true },
-    { place: "Hardware Track Winner", amount: "₹15,000" },
-    { place: "Software Track Winner", amount: "₹15,000" },
+    { place: "Hardware Track Winner", amount: "₹15,000", track: "hw" },
+    { place: "Software Track Winner", amount: "₹15,000", track: "sw" },
     { place: "Best Innovation", amount: "₹10,000" }
   ],
   perks: "Plus space-themed merchandise, certification and sponsor learning credits. Every participant gets a participation certificate.",
@@ -166,7 +167,7 @@ export const CONFIG = {
   ],
 
   faq: [
-    ["Who can participate?", "Everyone can apply. Teams of 3 to 4 members, and every team must include at least one girl (mandatory) to be eligible."],
+    ["Who can participate?", "College students from across India can apply. Teams of 3 to 4 members, and every team must include at least one girl (mandatory) to be eligible."],
     ["Is there a registration fee?", "No. Registration is completely free. You register on Unstop."],
     ["How does the selection work?", "Round 1 is online: submit an abstract and pitch deck (PPT, PPTX or PDF) on the official template by 20 Nov, 11:59 PM IST. The technical committee screens the entries on innovation, technical feasibility and architecture, and shortlists the top teams for the 24-hour offline hackathon at BMSIT&M."],
     ["Do we need to pick a track?", "Yes. Your proposal must say whether you are entering the Software or the Hardware track. Each track has 5 problem statements and 1 open innovation challenge."],

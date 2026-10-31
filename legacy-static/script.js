@@ -65,7 +65,7 @@ tick(); setInterval(tick, 1000);
 /* ===== problems ===== */
 function renderProblems(k) {
   $('#problem-grid').innerHTML = CONFIG.problems[k].map((p, i) =>
-    `<article class="card ps"><div class="num">${k === 'hw' ? 'HW' : 'SW'}-0${i + 1}</div>
+    `<article class="card ps" data-t="${k}"><div class="num">${k === 'hw' ? 'HW' : 'SW'}-0${i + 1}</div>
      <h3>${p.title}</h3><p>${p.desc}</p><span class="tag">${k === 'hw' ? 'Hardware' : 'Software'}</span></article>`).join('');
 }
 $$('.tab').forEach(t => t.onclick = () => {
