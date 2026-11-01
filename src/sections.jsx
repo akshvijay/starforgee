@@ -62,7 +62,7 @@ export function Hero({ ready }) {
     <section id="home" className="hero">
       {ready && (
         <>
-          <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · National hackathon</motion.p>
+          <motion.p className="eyebrow" {...fade(d)}>BMSIT&amp;M presents · National Level Hackathon</motion.p>
           <h1>
             <span className="l1"><SplitText text="STAR" immediate delay={d + 0.2} stagger={0.07} /></span>
             <span className="l2"><SplitText text="FORGE" immediate delay={d + 0.5} stagger={0.07} /></span>
@@ -126,7 +126,7 @@ export function Crawl() {
           <motion.div className="crawl" ref={txt} style={{ y }}>
             <p className="ep">Episode 2026</p>
             <h2>The Forge Begins</h2>
-            <p>It is a period of intense innovation. Student teams from across the country are gathering at BMSIT&amp;M for a 24-hour national hackathon on the 12th and 13th of December.</p>
+            <p>It is a period of intense innovation. Student teams from across the country are gathering at BMSIT&amp;M for a 24-hour national level hackathon on the 12th and 13th of December.</p>
             <p>Two tracks stand before them: HARDWARE, where circuits and machines spring to life, and SOFTWARE, where code bends the galaxy to its will. Each track offers five problem statements and one open challenge of its own.</p>
             <p>Entry is free, and a bounty of ₹65,000 awaits those who build the boldest solution. Gather a squad of three or four, with at least one girl on the team, choose a track, and register on Unstop&hellip;</p>
           </motion.div>
@@ -278,7 +278,7 @@ export function GameSection() {
 
 /* ---------- PRIZES ---------- */
 export function Prizes() {
-  const cast = [<Elder size={92} className="d1" />, <Droid size={84} className="d2" />, <DarkLord size={92} />, <Sage size={92} className="d1" />]
+  const cast = [<Droid size={84} className="d2" />, <DarkLord size={92} />, <Sage size={92} className="d1" />, <Elder size={92} className="d1" />]
   return (
     <Section id="prizes" eyebrow="05 · The bounty" title="Prize Pool" color="var(--accent)">
       <Reveal><p className="center big-prize">Total prize pool<b>{CONFIG.prizeTotal}</b></p></Reveal>
@@ -321,21 +321,23 @@ export function Timeline() {
 
 /* ---------- ORGANISERS ---------- */
 const LOGOS = [
-  ['bmsit', 'BMS Institute of Technology & Management'],
-  ['ieee-sb', 'IEEE Student Branch, BMSIT&M'],
-  ['aess', 'IEEE Aerospace and Electronic Systems Society'],
-  ['grss', 'IEEE Geoscience and Remote Sensing Society'],
-  ['wie', 'IEEE Women in Engineering'],
-  ['iic', "Institution's Innovation Council (Ministry of Education initiative)"]
+  ['bmsit',          'BMS Institute of Technology & Management',              'png'],
+  ['bmsit-25',       'BMSIT&M – 25 Years of Excellence (2002–2027)',           'jpg'],
+  ['ieee-sb',        'IEEE Student Branch, BMSIT&M',                          'png'],
+  ['aess',           'IEEE Aerospace and Electronic Systems Society',          'png'],
+  ['grss',           'IEEE Geoscience and Remote Sensing Society',             'png'],
+  ['wie',            'IEEE Women in Engineering',                              'png'],
+  ['iic',            "Institution's Innovation Council (Ministry of Education initiative)", 'png'],
+  ['ieee-bangalore', 'IEEE Bangalore Section',                                 'jpg']
 ]
 
 export function Organisers() {
   return (
     <Section id="organisers" eyebrow="07 · The council" title="Organised By" color="var(--red)">
       <div className="logos">
-        {LOGOS.map(([f, name], i) => (
+        {LOGOS.map(([f, name, ext], i) => (
           <Reveal key={f} delay={i * 0.08} y={24}>
-            <div className="logo-tile" title={name}><img src={'/logos/' + f + '.png'} alt={name} loading="lazy" /></div>
+            <div className="logo-tile" title={name}><img src={`/logos/${f}.${ext}`} alt={name} loading="lazy" /></div>
           </Reveal>
         ))}
       </div>
@@ -381,7 +383,7 @@ export function Footer() {
       <div className="grid three foot">
         <Reveal>
           <Logo className="foot-logo-crop" style={{ '--S': '250px' }} />
-          <p className="muted">24-hour national hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
+          <p className="muted">24-hour national level hackathon · 12th &amp; 13th December · BMSIT&amp;M</p>
           <Magnetic><a className="btn btn-sm" href={CONFIG.instagramUrl} target="_blank" rel="noopener">Follow on Instagram</a></Magnetic>
         </Reveal>
         <Reveal delay={0.1}>

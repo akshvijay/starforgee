@@ -2,7 +2,7 @@
 const CONFIG = {
   eventStart: '2026-12-12T09:00:00+05:30',   // countdown target (confirm start time)
   registerUrl: '#',                           // Unstop link
-  brochureUrl: '#',                           // e.g. 'assets/brochure.pdf'
+  brochureUrl: 'https://drive.google.com/uc?export=download&id=1Q8Flm38l5iXsJ79w1uD08-Nz11xqlFIq',
   pptTemplateUrl: '#',                        // e.g. 'assets/template.pptx'
   instagramUrl: '#',
   phone1: '+91XXXXXXXXXX',

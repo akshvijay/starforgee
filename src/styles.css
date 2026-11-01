@@ -520,7 +520,7 @@ footer h4{color:var(--blue);font-weight:700;font-size:1.1rem;letter-spacing:.14e
 .logo-tile img{display:block;max-height:104px;max-width:210px;width:auto;height:auto;object-fit:contain}
 .org-line{margin-top:22px}
 @media(max-width:820px){.logos{gap:10px}.logo-tile{height:104px;min-width:0;flex:1 1 calc(50% - 10px);padding:10px}.logo-tile img{max-height:80px;max-width:100%}}
-.logos{display:grid;grid-template-columns:repeat(3,1fr);max-width:820px;margin:0 auto}
+.logos{display:grid;grid-template-columns:repeat(4,1fr);max-width:1080px;margin:0 auto;gap:16px}
 .logos>div{display:flex}.logos .logo-tile{flex:1;min-width:0}
 @media(max-width:820px){.logos{grid-template-columns:repeat(2,1fr)}.logo-tile{flex:1}}
 

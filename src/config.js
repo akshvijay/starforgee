@@ -2,7 +2,7 @@
 export const CONFIG = {
   eventStart: "2026-12-12T08:00:00+05:30", // Day 1 - build begins, 08:00 AM IST
   registerUrl: "https://unstop.com/o/qhl7WSP?lb=uses5hnA&utm_medium=Share&utm_source=aerosele58679&utm_campaign=Online_coding_challenge",
-  brochureUrl: "#",                         // TODO: e.g. "/brochure.pdf" (put the file in /public)
+  brochureUrl: "https://drive.google.com/uc?export=download&id=1Q8Flm38l5iXsJ79w1uD08-Nz11xqlFIq",
   pptTemplateUrl: "/STARFORGE_TEMPLATE.pptx",
   psUrl: "/STARFORGE_PS.pdf",
   instagramUrl: "https://www.instagram.com/aess.bmsit?mdxt=MWM5dmQxaDdkM3pzOQ==",
@@ -169,7 +169,7 @@ export const CONFIG = {
   faq: [
     ["Who can participate?", "College students from across India can apply. Teams of 3 to 4 members, and every team must include at least one girl (mandatory) to be eligible."],
     ["Is there a registration fee?", "No. Registration is completely free. You register on Unstop."],
-    ["How does the selection work?", "Round 1 is online: submit an abstract and pitch deck (PPT, PPTX or PDF) on the official template by 20 Nov, 11:59 PM IST. The technical committee screens the entries on innovation, technical feasibility and architecture, and shortlists the top teams for the 24-hour offline hackathon at BMSIT&M."],
+    ["How does the selection work?", "Round 1 is online: submit an abstract and pitch deck (PPT, PPTX or PDF) on the official template by 20 Nov, 11:59 PM IST. The technical committee screens the entries on innovation, technical feasibility and architecture, and shortlists the top teams for the 24-hour offline national level hackathon at BMSIT&M."],
     ["Do we need to pick a track?", "Yes. Your proposal must say whether you are entering the Software or the Hardware track. Each track has 5 problem statements and 1 open innovation challenge."],
     ["Can we submit late or by email?", "No. Late or emailed entries are not accepted. Make sure your file is fully uploaded on Unstop before the deadline."],
     ["How are projects judged?", "Projects are judged live by a panel of industry experts through interactive demos on Day 2."],
