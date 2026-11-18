@@ -160,8 +160,8 @@ export const CONFIG = {
 
   timeline: [
     { when: "1 Nov", title: "Registrations & Round 1 open", desc: "Free registration on Unstop. Submit your abstract and pitch deck." },
-    { when: "20 Nov · 11:59 PM IST", title: "Registration and submission deadline", desc: "Last day to register and upload your PPT, PPTX or PDF. Late or emailed entries are not accepted." },
-    { when: "After 20 Nov", title: "Screening and shortlist", desc: "The technical committee reviews every deck and picks the teams for the offline finale." },
+    { when: "27th Nov · 11:59 PM IST", title: "Registration and submission deadline", desc: "Last day to register and upload your PPT, PPTX or PDF. Late or emailed entries are not accepted." },
+    { when: "After 27th Nov", title: "Screening and shortlist", desc: "The technical committee reviews every deck and picks the teams for the offline finale." },
     { when: "12 Dec · 8:00 AM IST", title: "Hackathon begins (Day 1)", desc: "24-hour build at BMSIT&M with mentoring and mini-games." },
     { when: "13 Dec · 3:30 PM IST", title: "Demos & closing (Day 2)", desc: "Live demos to a panel of industry experts, then prizes and closing." }
   ],
@@ -169,7 +169,7 @@ export const CONFIG = {
   faq: [
     ["Who can participate?", "College students from across India can apply. Teams of 3 to 4 members, and every team must include at least one girl (mandatory) to be eligible."],
     ["Is there a registration fee?", "No. Registration is completely free. You register on Unstop."],
-    ["How does the selection work?", "Round 1 is online: submit an abstract and pitch deck (PPT, PPTX or PDF) on the official template by 20 Nov, 11:59 PM IST. The technical committee screens the entries on innovation, technical feasibility and architecture, and shortlists the top teams for the 24-hour offline national level hackathon at BMSIT&M."],
+    ["How does the selection work?", "Round 1 is online: submit an abstract and pitch deck (PPT, PPTX or PDF) on the official template by 27th Nov, 11:59 PM IST. The technical committee screens the entries on innovation, technical feasibility and architecture, and shortlists the top teams for the 24-hour offline national level hackathon at BMSIT&M."],
     ["Do we need to pick a track?", "Yes. Your proposal must say whether you are entering the Software or the Hardware track. Each track has 5 problem statements and 1 open innovation challenge."],
     ["Can we submit late or by email?", "No. Late or emailed entries are not accepted. Make sure your file is fully uploaded on Unstop before the deadline."],
     ["How are projects judged?", "Projects are judged live by a panel of industry experts through interactive demos on Day 2."],

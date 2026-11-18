@@ -86,7 +86,7 @@ export function Hero({ ready }) {
             <Magnetic><a className="btn" href={CONFIG.registerUrl} target="_blank" rel="noopener">Register on Unstop →</a></Magnetic>
             <Magnetic><a className="btn btn-ghost" href={CONFIG.brochureUrl} download>Download brochure</a></Magnetic>
           </motion.div>
-          <motion.p className="deadline" {...fade(d + 1.9)}>Registrations close 20 Nov, 11:59 PM IST &middot; Every team must include at least one girl</motion.p>
+          <motion.p className="deadline" {...fade(d + 1.9)}>Registrations close 27th Nov, 11:59 PM IST &middot; Every team must include at least one girl</motion.p>
           <div className="walkers">
             <motion.div {...fade(d + 2.2)}>
               <Walker size={96} duration={26}><Sage size={96} className="walking" /></Walker>
@@ -182,7 +182,7 @@ export function Screening() {
     <Section id="screening" eyebrow="03 · Round 1 · Holotransmission" title="Online Screening (PPT)">
       <div className="grid two">
         <Reveal>
-          <p className="lead">Round 1 is online. Submit your abstract and pitch deck by 20 Nov, 11:59 PM IST. The technical committee screens every entry on innovation, technical feasibility and architecture, and the top teams advance to the 24-hour offline hackathon at BMSIT&amp;M.</p>
+          <p className="lead">Round 1 is online. Submit your abstract and pitch deck by 27th Nov, 11:59 PM IST. The technical committee screens every entry on innovation, technical feasibility and architecture, and the top teams advance to the 24-hour offline hackathon at BMSIT&amp;M.</p>
           <ol className="steps">
             {['Form a team of 3 or 4 with at least one girl (mandatory), and register on Unstop (free).', 'Pick a problem statement, or the open innovation challenge, in the Software or Hardware track.', 'Download the official PPT template and fill it in. Say clearly which track you are entering.', 'Upload it as a PPT, PPTX or PDF on Unstop before the deadline.'].map((t, i) => (
               <motion.li key={t} initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 * i, duration: 0.6 }}>
